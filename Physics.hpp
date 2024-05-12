@@ -19,4 +19,5 @@ class Physics {
     Point topLeft;
     Point bottomRight;
     double timePerTick;
+
 };

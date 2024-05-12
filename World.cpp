@@ -67,7 +67,7 @@ World::World(const std::string& worldFilePath) {
         Point curPoint(x,y);
         Velocity curVelocity(vx,vy);
         Color curColor(red, green, blue);
-        Ball * ball = new Ball (curPoint, radius, curVelocity, 5, curColor);
+        Ball * ball = new Ball (curPoint, radius, curVelocity, curColor, isCollidable);
         // TODO возможна утечка памяти, вызвать принудительно в где-нибудь delete
 		// После того как мы каким-то образом
         // сконструируем объект Ball ball;
