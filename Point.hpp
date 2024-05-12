@@ -5,6 +5,7 @@ class Point {
   public:
     Point() = default;
     inline Point(double x, double y) : x{x}, y{y} {};
+    inline Point(const Point& p) : x{p.x}, y{p.y} {};
     double x{};
     double y{};
 };
