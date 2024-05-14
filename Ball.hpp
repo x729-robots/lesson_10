@@ -6,7 +6,7 @@
 class Ball {
   public:
     Ball(const Point& center, double radius, const Velocity& velocity,
-         const Color color, bool collidable);
+         const Color& color, bool collidable);
     void setVelocity(const Velocity& velocity);
     Velocity getVelocity() const;
     void draw(Painter& painter) const;

@@ -1,7 +1,7 @@
 #include "Ball.hpp"
 #include <cmath>
 Ball::Ball(const Point& center, double radius, const Velocity& velocity,
-           const Color color, bool collidable)
+           const Color& color, bool collidable)
     : center(center), radius(radius), velocity(velocity), color(color),
       collidable(collidable) {}
 
