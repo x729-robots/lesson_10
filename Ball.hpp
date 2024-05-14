@@ -6,9 +6,7 @@
 class Ball {
   public:
     Ball(const Point& center, double radius, const Velocity& velocity,
-         const Color color, bool collidable)
-        : ballCenter(center), ballRadius(radius), ballVelocity(velocity),
-          ballColor(color), isCollidable(collidable){};
+         const Color color, bool collidable);
     void setVelocity(const Velocity& velocity);
     Velocity getVelocity() const;
     void draw(Painter& painter) const;
@@ -19,9 +17,9 @@ class Ball {
     bool checkCollidable() const;
 
   private:
-    Point ballCenter;
-    const double ballRadius;
-    Velocity ballVelocity;
-    const Color ballColor;
-    bool isCollidable;
+    Point center;
+    const double radius;
+    Velocity velocity;
+    const Color color;
+    bool collidable;
 };

@@ -1,18 +1,23 @@
 #include "Ball.hpp"
 #include <cmath>
+Ball::Ball(const Point& center, double radius, const Velocity& velocity,
+           const Color color, bool collidable)
+    : center(center), radius(radius), velocity(velocity), color(color),
+      collidable(collidable) {}
+
 /**
  * Задает скорость объекта
  * @param velocity новое значение скорости
  */
 void Ball::setVelocity(const Velocity& velocity) {
-    ballVelocity = velocity;
+    this->velocity = velocity;
 }
 
 /**
  * @return скорость объекта
  */
 Velocity Ball::getVelocity() const {
-    return ballVelocity;
+    return velocity;
 }
 
 /**
@@ -24,7 +29,7 @@ Velocity Ball::getVelocity() const {
  * @param painter контекст отрисовки
  */
 void Ball::draw(Painter& painter) const {
-    painter.draw(ballCenter, ballRadius, ballColor);
+    painter.draw(center, radius, color);
 }
 
 /**
@@ -32,14 +37,14 @@ void Ball::draw(Painter& painter) const {
  * @param center новый центр объекта
  */
 void Ball::setCenter(const Point& center) {
-    ballCenter = center;
+    this->center = center;
 }
 
 /**
  * @return центр объекта
  */
 Point Ball::getCenter() const {
-    return ballCenter;
+    return this->center;
 }
 
 /**
@@ -48,7 +53,7 @@ Point Ball::getCenter() const {
  * не требуется
  */
 double Ball::getRadius() const {
-    return ballRadius;
+    return this->radius;
 }
 
 /**
@@ -59,9 +64,9 @@ double Ball::getRadius() const {
  * эквивалентна объему: PI * radius^3 * 4. / 3.
  */
 double Ball::getMass() const {
-    return M_PI * pow(ballRadius, 3) * 4. / 3.;
+    return M_PI * pow(radius, 3) * 4. / 3.;
 }
 
 bool Ball::checkCollidable() const {
-    return isCollidable;
+    return this->collidable;
 }
