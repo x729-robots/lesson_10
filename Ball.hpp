@@ -4,8 +4,11 @@
 #include "Velocity.hpp"
 
 class Ball {
-public:
-	Ball (const Point& center, double radius, const Velocity& velocity, const Color color, bool collidable):ballCenter (center), ballRadius(radius), ballVelocity(velocity), ballColor(color), isCollidable (collidable){};
+  public:
+    Ball(const Point& center, double radius, const Velocity& velocity,
+         const Color color, bool collidable)
+        : ballCenter(center), ballRadius(radius), ballVelocity(velocity),
+          ballColor(color), isCollidable(collidable){};
     void setVelocity(const Velocity& velocity);
     Velocity getVelocity() const;
     void draw(Painter& painter) const;
@@ -13,11 +16,12 @@ public:
     Point getCenter() const;
     double getRadius() const;
     double getMass() const;
-	bool checkCollidable() const;
-private:
-	Point ballCenter;
-	const double ballRadius;
-	Velocity ballVelocity;
-	const Color ballColor;
-	bool isCollidable;
+    bool checkCollidable() const;
+
+  private:
+    Point ballCenter;
+    const double ballRadius;
+    Velocity ballVelocity;
+    const Color ballColor;
+    bool isCollidable;
 };

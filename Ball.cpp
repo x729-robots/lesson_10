@@ -5,7 +5,7 @@
  * @param velocity новое значение скорости
  */
 void Ball::setVelocity(const Velocity& velocity) {
-	ballVelocity = velocity;
+    ballVelocity = velocity;
 }
 
 /**
@@ -24,7 +24,7 @@ Velocity Ball::getVelocity() const {
  * @param painter контекст отрисовки
  */
 void Ball::draw(Painter& painter) const {
-	painter.draw(ballCenter, ballRadius ,ballColor);	
+    painter.draw(ballCenter, ballRadius, ballColor);
 }
 
 /**
@@ -32,7 +32,7 @@ void Ball::draw(Painter& painter) const {
  * @param center новый центр объекта
  */
 void Ball::setCenter(const Point& center) {
-	ballCenter = center;
+    ballCenter = center;
 }
 
 /**
@@ -59,10 +59,9 @@ double Ball::getRadius() const {
  * эквивалентна объему: PI * radius^3 * 4. / 3.
  */
 double Ball::getMass() const {
-	return M_PI * pow(ballRadius,3) * 4. / 3.;
+    return M_PI * pow(ballRadius, 3) * 4. / 3.;
 }
 
-bool Ball::checkCollidable() const 
-{
-	return isCollidable;
+bool Ball::checkCollidable() const {
+    return isCollidable;
 }
