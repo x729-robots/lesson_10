@@ -65,7 +65,7 @@ World::World(const std::string& worldFilePath) {
         // объекта класса Ball со свойствами, прочитанными
         // выше, и его помещения в контейнер balls
         Point curPoint(x, y);
-        Velocity curVelocity(vx, vy);
+        Velocity curVelocity(Point{vx, vy});
         Color curColor(red, green, blue);
         Ball* ball =
             new Ball(curPoint, radius, curVelocity, curColor, isCollidable);
