@@ -22,6 +22,7 @@ World::World(const std::string& worldFilePath) {
      * заполняя координаты x и у. Если что-то делаем
      * многократно - хорошо бы вынести это в функцию
      * и не дублировать код...
+     * TODO не пойму, вроде всё прекрасно в коде тут...
      */
     stream >> topLeft.x >> topLeft.y >> bottomRight.x >> bottomRight.y;
     physics.setWorldBox(topLeft, bottomRight);
@@ -31,6 +32,8 @@ World::World(const std::string& worldFilePath) {
      * (x, y) и (vx, vy) - составные части объекта, также
      * как и (red, green, blue). Опять же, можно упростить
      * этот код, научившись читать сразу Point, Color...
+     * TODO потом доделаю. Просто - нужно перегрузить оператор >> методом
+     * копирования из std::in в классt Point и Color
      */
     double x;
     double y;
