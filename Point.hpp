@@ -3,9 +3,17 @@
 
 class Point {
   public:
-    Point() = default;
+    inline Point() = default;
+    inline ~Point() = default;
     inline Point(double x, double y) : x{x}, y{y} {};
     inline Point(const Point& p) : x{p.x}, y{p.y} {};
+
+    inline Point& operator=(const Point& other) {
+        x = other.x;
+        y = other.y;
+        return *this;
+    }
+
     double x{};
     double y{};
 };

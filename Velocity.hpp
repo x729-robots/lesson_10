@@ -6,6 +6,7 @@ class Velocity {
   public:
     inline Velocity() = default;
 
+    inline ~Velocity() = default;
     /**
      * @brief Конструктор скорости по модулю и углу
      * @param abs модуль скорости
@@ -23,6 +24,11 @@ class Velocity {
      */
     inline Velocity(const Point& vector) {
         setVector(vector);
+    }
+
+    inline Velocity& operator=(const Point& other) {
+        setVector(other);
+        return *this;
     }
 
     inline void setVector(const Point& vector) {
